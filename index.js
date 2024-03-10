@@ -5,19 +5,19 @@ const path = require("path");
 
 // *************************
 const app = express();
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname)));
 // *************************
 
 try {
   bot
     .on("qr", async (qr) => {
       await codeQR
-        .toFile("./public/img/qr.png", qr, { type: "png", size: 200 })
+        .toFile("./qr.png", qr, { type: "png", size: 200 })
         .then(() => console.log("qr listo"))
         .catch((err) => console.error(err));
 
       app.get("/qr", (req, res) => {
-        res.sendFile(path.join(__dirname, "./public/img/qr.png"));
+        res.sendFile(path.join(__dirname, "qr.png"));
       });
     })
     .on("ready", () => console.log("Client Conectado"))
