@@ -28,3 +28,7 @@ try {
 } catch (error) {
   console.error(error);
 }
+
+app.listen(3000, (port) => {
+  console.log("escuchando el port 3000");
+});
