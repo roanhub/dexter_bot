@@ -132,3 +132,6 @@ dist
 # cache y auth local de whatsapp-web.js
 .wwebjs_auth
 .wwebjs_cache
+
+# QR Generado
+qr.png
